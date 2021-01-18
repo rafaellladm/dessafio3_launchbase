@@ -2,7 +2,7 @@
 const express = require('express')
 const server = express()
 
-
+server.use("view engine", "html")
 
 // Configuração de caminhos
 server.get("/", function(req, res) {
