@@ -4,6 +4,10 @@ const server = express()
 
 server.use("view engine", "html")
 
+nunjucks.configure("views", {
+    express: server
+})
+
 // Configuração de caminhos
 server.get("/", function(req, res) {
     return res.send("Olá, seja bem vindo!")
