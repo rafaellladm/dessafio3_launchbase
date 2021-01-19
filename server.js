@@ -2,7 +2,9 @@
 const express = require('express')
 const server = express()
 
-server.use("view engine", "html")
+server.use(express.static("public"))
+
+server.set("view engine", "html")
 
 nunjucks.configure("views", {
     express: server
