@@ -6,7 +6,7 @@
 
 body {
     display: grid;
-    grid-template-rows: 33vh 58vh 10vh;
+    grid-template-rows: 13vh 36vh 58vh 10vh;
 }
 
 .informacoes {
@@ -49,6 +49,7 @@ body {
 }
 
 .tecnologia {
+    height: 200px;
     padding-top: 40px;
     text-align: center;
 }
@@ -82,6 +83,7 @@ body {
 }
 
 #redes {
+    height: 40px;
     width: 100%;
     text-align: center;
     padding-top: 20px;
