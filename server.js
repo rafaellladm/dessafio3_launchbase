@@ -1,18 +1,27 @@
 // == Usando express para gerar server ==
 const express = require('express')
+const nunjucks = require('nunjucks')
+
 const server = express()
 
+//definindo para o express onde encontra os arquivos estáticos
 server.use(express.static("public"))
 
-server.set("view engine", "html")
+// server.use(express.static("public"))
+
+server.set("view engine", "njk")
 
 nunjucks.configure("views", {
-    express: server
+    express:server
 })
 
 // Configuração de caminhos
 server.get("/", function(req, res) {
-    return res.send("Olá, seja bem vindo!")
+    return res.render("courses")
+})
+
+server.get("/about", function(req, res) {
+    return res.render("about")
 })
 
 // Mostrando em que porta o servidor estará usando
