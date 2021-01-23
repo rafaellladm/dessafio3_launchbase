@@ -17,7 +17,7 @@ nunjucks.configure("views", {
 
 // Configuração de caminhos
 server.get("/", function(req, res) {
-    return res.render("courses")
+    return res.render("not-found")
 })
 
 server.get("/about", function(req, res) {
