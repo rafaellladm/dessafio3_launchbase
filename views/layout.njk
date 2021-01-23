@@ -9,10 +9,12 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png" />
     <link rel="stylesheet" href="/style/geral.css">
-    <link rel="stylesheet" href="/style/layaout.css">
+    <link rel="stylesheet" href="/style/layout.css">
 
 </head>
 <body>
+
+    {% block menu %}
     <header>
         <div>
             <a href="https://discordapp.com/invite/gCRAFhc">Comunidade</a>
@@ -22,6 +24,7 @@
             <a href="/">Conteúdo</a>
         </div>
     </header>
+    {% endblock %}
     
     {% block content %}{% endblock %}
     
