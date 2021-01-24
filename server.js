@@ -17,11 +17,15 @@ nunjucks.configure("views", {
 
 // Configuração de caminhos
 server.get("/", function(req, res) {
-    return res.render("not-found")
+    return res.render("courses")
 })
 
 server.get("/about", function(req, res) {
     return res.render("about")
+})
+
+server.use(function(req, res) {
+    res.status(404).render("not-found");
 })
 
 // Mostrando em que porta o servidor estará usando
