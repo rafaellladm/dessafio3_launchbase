@@ -1,0 +1,24 @@
+.box_error {
+    display: grid;
+    border: 2px solid  #6c5ce7;
+    margin: 200px 100px;
+}
+
+.error_message {
+    display: grid;
+    padding: 30px;
+    grid-template-columns: 1fr 4fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.error_message img {
+    border-radius: 15px;
+    width: 200px;
+    box-shadow: 1px 2px 3px #FF9800;
+}
+
+.error_message h1 {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.904);
+}
