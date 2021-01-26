@@ -9,42 +9,22 @@
 
 {% block content %}
 <div class="cards">
-    <div id="starter" class="card">
+
+    {% for item in items %}
+    <div id="{{ item.id }}" class="card">
         <div class="img">
-            <img src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/starter.svg" alt="Logo">
+            <img src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/{{ item.id }}.svg" alt="Logo">
         </div>
         <div class="titulos">
-            <h3>Torne-se um programador desejado</h3>
+            <h3>{{ item.title }}</h3>
         </div>
         <div class="conteudo">
-            <p>5 módulos</p>
-            <p>Gratuito</p>
+            <p>{{ item.n_modulo }} módulos</p>
+            <p>{{ item.price }}</p>
         </div>
     </div>
-    <div id="launchbase" class="card">
-        <div class="img">
-            <img src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/launchbase.svg" alt="Logo">
-        </div>
-        <div class="titulos">
-            <h3>Domine programação do zero</h3>
-        </div>
-        <div class="conteudo">
-            <p>16 módulos</p>
-            <p>Pago</p>
-        </div>
-    </div>
-    <div id="gostack" class="card">
-        <div class="img">
-            <img src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/gostack.svg" alt="Logo">
-        </div>
-        <div class="titulos">
-            <h3>Treinamento imersivo</h3>
-        </div>
-        <div class="conteudo">
-            <p>20 módulos</p>
-            <p>Pago</p>
-        </div>
-    </div>
+    {% endfor %}
+    
 </div>
 
 <div class="modal-overlay">
