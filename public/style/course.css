@@ -1,0 +1,13 @@
+/* === PAGE === */
+
+.page {
+    margin: 6px auto;
+    max-height: 700px;
+    height: 100%;
+}
+
+.page iframe {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}

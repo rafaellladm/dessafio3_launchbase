@@ -1,7 +1,8 @@
 header {
     padding: 25px;
     background: #636e725d;
-    border-bottom: 1px solid #FF9800;
+    /* border-bottom: 1px solid #FF9800; */
+    box-shadow: 2px 3px 4px #ff9800;
 }
 
 header div {
