@@ -1,7 +1,7 @@
 // == Usando express para gerar server ==
 const express = require('express')
 const nunjucks = require('nunjucks')
-const content = require('./data')
+const courses = require('./data')
 
 const server = express()
 
@@ -13,12 +13,13 @@ server.use(express.static("public"))
 server.set("view engine", "njk")
 
 nunjucks.configure("views", {
-    express:server
+    express: server,
+    noCache: true
 })
 
 // Configuração de caminhos
 server.get("/", function(req, res) {
-    return res.render("courses", { items: content })
+    return res.render("courses", { items: courses })
 })
 
 server.get("/about", function(req, res) {
@@ -43,6 +44,20 @@ server.get("/about", function(req, res) {
 
 
     return res.render("about", { about })
+})
+
+server.get("/courses/:id", function(req, res) {
+    const id = req.params.id
+
+    const course = courses.find(function(course) {
+        return course.id == id
+    })
+  
+    if (!course) {
+        return res.render("not-found")
+    }
+
+    return res.render("course", { item: course })
 })
 
 server.use(function(req, res) {
